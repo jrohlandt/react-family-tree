@@ -3,22 +3,47 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // https://codepen.io/chuongdang/pen/lcnsC
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div class="tree">
+        <ul>
+          <li>
+            <a href="#">Parent</a>
+            <ul>
+              <li>
+                <a href="#">Child</a>
+                <ul>
+                  <li>
+                    <a href="#">Grand Child</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Child</a>
+                <ul>
+                  <li><a href="#">Grand Child</a></li>
+                  <li>
+                    <a href="#">Grand Child</a>
+                    <ul>
+                      <li>
+                        <a href="#">Great Grand Child</a>
+                      </li>
+                      <li>
+                        <a href="#">Great Grand Child</a>
+                      </li>
+                      <li>
+                        <a href="#">Great Grand Child</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Grand Child</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
