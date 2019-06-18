@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './App.css';
 function Original() {
   // https://codepen.io/chuongdang/pen/lcnsC
 
