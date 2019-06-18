@@ -2,7 +2,6 @@ import React from 'react';
 import './FamilyTree.css';
 
 function createNodes(nodes, nodesKey) {
-    console.log(nodesKey);
     return (
         <ul>
             { 
