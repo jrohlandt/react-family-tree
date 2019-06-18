@@ -1,44 +1,34 @@
 import React from 'react';
+import './FamilyTree.css';
 
-const nodes = [
-    {
-        id: 1,
-        title: 'parent',
-        nodes: [
-            {
-                id: 90329,
-                title: 'n1',
-            },
-            {
-                id: 1889,
-                title: 'n2',
-                nodes: [
-                    {
-                        id: 2222,
-                        title: 'n33',
-                    },
-                    {
-                        id: 9090,
-                        title: 'n44',
-                        nodes: [],
-                    }
-                ]
+function createNodes(nodes, nodesKey) {
+    console.log(nodesKey);
+    return (
+        <ul>
+            { 
+                nodes.map(node => {
+                    return (
+                        <li key={'li_'+node.id}>
+                            <span className="node-title">{node.title}</span>
+                            { typeof node[nodesKey] !== 'undefined' ? createNodes(node[nodesKey], nodesKey) : '' }
+                        </li>
+                    );    
+                })
             }
-        ] 
-    }
-];
+        </ul>
+    );
+}
 
-class FamilyTree extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <div class="tree">
-
-                </div>
+function FamilyTree(props) {
+    // e.g. your child nodes might have a different name so you can pass the key as a prop.
+    const nodesKey = props.nodesKey ? props.nodesKey : 'nodes';
+    return (
+        <div>
+            <div className="tree">
+                {createNodes(props.nodes, nodesKey)}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default FamilyTree;
